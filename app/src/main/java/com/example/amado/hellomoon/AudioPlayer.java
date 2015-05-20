@@ -23,7 +23,7 @@ public class AudioPlayer {
 
         }else {
 
-          
+
             if(mPlayer==null) {
                 mPlayer = MediaPlayer.create(c, R.raw.one_small_step);
             }

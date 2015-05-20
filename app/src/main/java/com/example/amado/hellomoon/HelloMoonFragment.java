@@ -1,13 +1,17 @@
 package com.example.amado.hellomoon;
 
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 /**
  * Created by Amado on 19/05/2015.
@@ -17,11 +21,13 @@ public class HelloMoonFragment extends Fragment {
     private Button mStopButton;
     private AudioPlayer mPlayer = new AudioPlayer();
     private boolean mIsPlaying;
+    private VideoView mVideo;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIsPlaying= false;
+        setRetainInstance(true);
     }
 
     @Nullable
@@ -30,12 +36,14 @@ public class HelloMoonFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_hello_moon, container, false);
 
+
         mPlayButton = (Button)v.findViewById(R.id.hellomoon_playButton);
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
              mPlayer.play(getActivity());
                togglePlayButtonText();
+
             }
         });
         mStopButton = (Button)v.findViewById(R.id.hellomoon_stopButton);

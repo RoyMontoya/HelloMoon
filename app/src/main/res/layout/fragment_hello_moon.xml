@@ -5,10 +5,10 @@
               android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/hello_moon_video"
         android:src="@drawable/armstrong_on_moon"
         android:scaleType="centerInside"
         android:layout_weight="1"
-        android:contentDescription="@string/hellomoon_description"
         android:layout_height="match_parent"
         android:layout_width="match_parent"/>
     <TableRow
